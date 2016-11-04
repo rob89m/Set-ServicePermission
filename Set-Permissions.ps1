@@ -72,12 +72,11 @@ else
 # Run your code that needs to be elevated here
 Set-ExecutionPolicy Unrestricted -Force
 
-# Install Chocolatey Package Manager
-iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+# Install Carbon Module
+Install-Module -Name 'Carbon'
 
-# Install Carbon using Chocolatey
-# More information regarding carbon can be found at http://get-carbon.org/
-cinst Carbon -y
+# Import Carbon Module
+Import-Module 'Carbon'
 
 # Set Permissions on Service (eg. Spooler)
 # More information on usage can be found at http://get-carbon.org/Grant-ServicePermission.html
