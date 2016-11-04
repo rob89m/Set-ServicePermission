@@ -72,6 +72,7 @@ else
 # Run your code that needs to be elevated here
 Set-ExecutionPolicy Unrestricted -Force
 
+# Grant access to 'Print Spooler' service
 # Install Carbon Module
 Install-Module -Name 'Carbon' -Force
 
@@ -81,3 +82,11 @@ Import-Module 'Carbon'
 # Set Permissions on Service (eg. Spooler)
 # More information on usage can be found at http://get-carbon.org/Grant-ServicePermission.html
 Grant-ServicePermission -Name spooler -Identity SG_PrinterAdmin -FullControl
+
+
+# Grant access to 'Print Spooler' queue location
+# Install 'NTFS Security' module
+Install-Module NTFSSecurity -Force
+
+# Set Permissions on queue folder
+Add-NTFSAccess -Path C:\Windows\System32\spool\PRINTERS\ -Account SG_PrinterAdmin -AccessRights FullControl
