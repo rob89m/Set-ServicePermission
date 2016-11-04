@@ -81,4 +81,4 @@ cinst Carbon -y
 
 # Set Permissions on Service (eg. Spooler)
 # More information on usage can be found at http://get-carbon.org/Grant-ServicePermission.html
-Grant-ServicePermission -Name spooler -Identity robert -FullControl
+Grant-ServicePermission -Name spooler -Identity SG_PrinterAdmin -FullControl
