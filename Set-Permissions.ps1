@@ -73,10 +73,10 @@ else
 Set-ExecutionPolicy Unrestricted -Force
 
 # Install Carbon Module
-Install-Module -Name 'Carbon'
+Install-Module -Name 'Carbon' -Force
 
 # Import Carbon Module
-Import-Module 'Carbon'
+Import-Module 'Carbon' 
 
 # Set Permissions on Service (eg. Spooler)
 # More information on usage can be found at http://get-carbon.org/Grant-ServicePermission.html
